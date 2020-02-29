@@ -11,7 +11,7 @@ uid: core/miscellaneous/testing/in-memory
 The InMemory provider is useful when you want to test components using something that approximates connecting to the real database, without the overhead of actual database operations.
 
 > [!TIP]  
-> You can view this article's [sample](https://github.com/aspnet/EntityFramework.Docs/tree/master/samples/core/Miscellaneous/Testing) on GitHub.
+> You can view this article's [sample](https://github.com/dotnet/EntityFramework.Docs/tree/master/samples/core/Miscellaneous/Testing) on GitHub.
 
 ## InMemory is not a relational database
 
@@ -21,7 +21,7 @@ Some examples of this include:
 
 * InMemory will allow you to save data that would violate referential integrity constraints in a relational database.
 * If you use DefaultValueSql(string) for a property in your model, this is a relational database API and will have no effect when running against InMemory.
-* [Concurrency via Timestamp/row version](xref:core/modeling/concurrency#timestamprow-version) (`[Timestamp]` or `IsRowVersion`) is not supported. No [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception) will be thrown if an update is done using an old concurrency token.
+* [Concurrency via Timestamp/row version](xref:core/modeling/concurrency#timestamprowversion) (`[Timestamp]` or `IsRowVersion`) is not supported. No [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception) will be thrown if an update is done using an old concurrency token.
 
 > [!TIP]  
 > For many test purposes these differences will not matter. However, if you want to test against something that behaves more like a true relational database, then consider using [SQLite in-memory mode](sqlite.md).

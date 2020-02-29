@@ -207,7 +207,7 @@ If you're using SQL Server, there are some additional things you should be aware
 
 ### Geography or geometry
 
-By default, spatial properties are mapped to `geography` columns in SQL Server. To use `geometry`, [configure the column type](xref:core/modeling/relational/data-types) in your model.
+By default, spatial properties are mapped to `geography` columns in SQL Server. To use `geometry`, [configure the column type](xref:core/modeling/entity-properties#column-data-types) in your model.
 
 ### Geography polygon rings
 
@@ -234,6 +234,22 @@ apt-get install libsqlite3-mod-spatialite
 
 # macOS
 brew install libspatialite
+```
+
+Unfortunately, newer versions of PROJ (a dependency of SpatiaLite) are incompatible with EF's default [SQLitePCLRaw bundle](/dotnet/standard/data/sqlite/custom-versions#bundles). You can work around this by either creating a custom [SQLitePCLRaw provider](/dotnet/standard/data/sqlite/custom-versions#sqlitepclraw-providers) that uses the system SQLite library, or you can install a custom build of SpatiaLite disabling PROJ support.
+
+``` sh
+curl https://www.gaia-gis.it/gaia-sins/libspatialite-4.3.0a.tar.gz | tar -xz
+cd libspatialite-4.3.0a
+
+if [[ `uname -s` == Darwin* ]]; then
+    # Mac OS requires some minor patching
+    sed -i "" "s/shrext_cmds='\`test \\.\$module = .yes && echo .so \\|\\| echo \\.dylib\`'/shrext_cmds='.dylib'/g" configure
+fi
+
+./configure --disable-proj
+make
+make install
 ```
 
 ### Configuring SRID

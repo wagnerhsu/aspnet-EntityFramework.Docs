@@ -8,27 +8,27 @@ uid: core/providers/cosmos/index
 ---
 # EF Core Azure Cosmos DB Provider
 
->[!NOTE]
+> [!NOTE]
 > This provider is new in EF Core 3.0.
 
 This database provider allows Entity Framework Core to be used with Azure Cosmos DB. The provider is maintained as part of the [Entity Framework Core Project](https://github.com/aspnet/EntityFrameworkCore).
 
 It is strongly recommended to familiarize yourself with the [Azure Cosmos DB documentation](/azure/cosmos-db/introduction) before reading this section.
 
->[!NOTE]
+> [!NOTE]
 > This provider only works with the SQL API of Azure Cosmos DB.
 
 ## Install
 
 Install the [Microsoft.EntityFrameworkCore.Cosmos NuGet package](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Cosmos/).
 
-## [.NET Core CLI](#tab/dotnet-core-cli)
+### [.NET Core CLI](#tab/dotnet-core-cli)
 
-``` console
+```dotnetcli
 dotnet add package Microsoft.EntityFrameworkCore.Cosmos
 ```
 
-## [Visual Studio](#tab/vs)
+### [Visual Studio](#tab/vs)
 
 ``` powershell
 Install-Package Microsoft.EntityFrameworkCore.Cosmos
@@ -39,14 +39,14 @@ Install-Package Microsoft.EntityFrameworkCore.Cosmos
 ## Get started
 
 > [!TIP]  
-> You can view this article's [sample on GitHub](https://github.com/aspnet/EntityFramework.Docs/tree/master/samples/core/Cosmos).
+> You can view this article's [sample on GitHub](https://github.com/dotnet/EntityFramework.Docs/tree/master/samples/core/Cosmos).
 
 Like for other providers the first step is to call [UseCosmos](/dotnet/api/Microsoft.EntityFrameworkCore.CosmosDbContextOptionsExtensions.UseCosmos):
 
 [!code-csharp[Configuration](../../../../samples/core/Cosmos/ModelBuilding/OrderContext.cs?name=Configuration)]
 
 > [!WARNING]
-> The endpoint and key are hardcoded here for simplicity, but in a production app these should be [stored securily](/aspnet/core/security/app-secrets#secret-manager)
+> The endpoint and key are hardcoded here for simplicity, but in a production app these should be [stored securely](/aspnet/core/security/app-secrets#secret-manager).
 
 In this example `Order` is a simple entity with a reference to the [owned type](../../modeling/owned-entities.md) `StreetAddress`.
 
@@ -83,7 +83,7 @@ By default EF Core will create containers with the partition key set to `"__part
 
 [!code-csharp[PartitionKey](../../../../samples/core/Cosmos/ModelBuilding/OrderContext.cs?name=PartitionKey)]
 
->[!NOTE]
+> [!NOTE]
 >The partition key property can be of any type as long as it is [converted to string](xref:core/modeling/value-conversions).
 
 Once configured the partition key property should always have a non-null value. When issuing a query a condition can be added to make it single-partition.

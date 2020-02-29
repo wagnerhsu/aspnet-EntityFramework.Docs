@@ -2,7 +2,7 @@
   href: index.md
   items:
   - name: EF Core & EF6
-    items:  
+    items:
     - name: Compare EF Core & EF6
       href: efcore-and-ef6/index.md
     - name: Port from EF6 to EF Core
@@ -19,10 +19,18 @@
     items:
     - name: Overview
       href: core/index.md
-    - name: "What's New"
+    - name: "Releases and planning (Roadmap)"
       items:
-      - name: Overview
+      - name: Current and planned releases
         href: core/what-is-new/index.md
+      - name: Release planning process
+        href: core/what-is-new/release-planning.md
+      - name: EF Core 5.0
+        items:
+        - name: High-level plan
+          href: core/what-is-new/ef-core-5.0/plan.md
+        - name: "What's new?"
+          href: core/what-is-new/ef-core-5.0/whatsnew.md
       - name: EF Core 3.0
         items:
         - name: New features
@@ -53,7 +61,7 @@
         href: core/get-started/index.md
       - name: Installing EF Core
         href: core/get-started/install/index.md
-      - name: "⤤ ASP.NET Core Tutorial"
+      - name: ASP.NET Core Tutorial >>
         href: /aspnet/core/data/ef-rp/intro
     - name: Fundamentals
       items:
@@ -79,18 +87,14 @@
       items:
       - name: Overview
         href: core/modeling/index.md
-      - name: "Including & Excluding Types"
-        href: core/modeling/included-types.md
-      - name: "Including & Excluding Properties"
-        href: core/modeling/included-properties.md
-      - name: Keys (primary)
+      - name: Entity Types
+        href: core/modeling/entity-types.md
+      - name: Entity Properties
+        href: core/modeling/entity-properties.md
+      - name: Keys
         href: core/modeling/keys.md
       - name: Generated Values
         href: core/modeling/generated-properties.md
-      - name: Required and Optional Properties
-        href: core/modeling/required-optional.md
-      - name: Maximum Length
-        href: core/modeling/max-length.md
       - name: Concurrency Tokens
         href: core/modeling/concurrency.md
       - name: Shadow Properties
@@ -99,10 +103,10 @@
         href: core/modeling/relationships.md
       - name: Indexes
         href: core/modeling/indexes.md
-      - name: Alternate Keys
-        href: core/modeling/alternate-keys.md
       - name: Inheritance
         href: core/modeling/inheritance.md
+      - name: Sequences
+        href: core/modeling/sequences.md
       - name: Backing Fields
         href: core/modeling/backing-field.md
       - name: Value Conversions
@@ -119,36 +123,9 @@
         href: core/modeling/keyless-entity-types.md
       - name: Alternating models with same DbContext
         href: core/modeling/dynamic-model.md
-      - name: Spatial Data (GIS)
+      - name: Spatial Data
+        displayName: GIS
         href: core/modeling/spatial.md
-      - name: Relational database modeling
-        items:
-        - name: Overview
-          href: core/modeling/relational/index.md
-        - name: Table Mapping
-          href: core/modeling/relational/tables.md
-        - name: Column Mapping
-          href: core/modeling/relational/columns.md
-        - name: Data Types
-          href: core/modeling/relational/data-types.md
-        - name: Primary Keys
-          href: core/modeling/relational/primary-keys.md
-        - name: Default Schema
-          href: core/modeling/relational/default-schema.md
-        - name: Computed Columns
-          href: core/modeling/relational/computed-columns.md
-        - name: Sequences
-          href: core/modeling/relational/sequences.md
-        - name: Default Values
-          href: core/modeling/relational/default-values.md
-        - name: Indexes
-          href: core/modeling/relational/indexes.md
-        - name: Foreign Key Constraints
-          href: core/modeling/relational/fk-constraints.md
-        - name: Alternate Keys (Unique Constraints)
-          href: core/modeling/relational/unique-constraints.md
-        - name: Inheritance (Relational Database)
-          href: core/modeling/relational/inheritance.md
     - name: Managing Database Schemas
       items:
       - name: Overview
@@ -261,8 +238,8 @@
         href: core/miscellaneous/cli/dbcontext-creation.md
       - name: Design-time Services
         href: core/miscellaneous/cli/services.md
-    - name: "⤤ EF Core API Reference"
-      href: https://docs.microsoft.com/dotnet/api/?view=efcore-2.1
+    - name: EF Core API Reference >>
+      href: /dotnet/api/?view=efcore-3.1
   - name: Entity Framework 6
     items:
     - name: Overview
@@ -383,7 +360,7 @@
             href: ef6/modeling/code-first/conventions/model.md
         - name: Fluent Configuration
           items:
-          - name: Relationships 
+          - name: Relationships
             href: ef6/modeling/code-first/fluent/relationships.md
           - name: Types and Properties
             href: ef6/modeling/code-first/fluent/types-and-properties.md
@@ -429,7 +406,7 @@
             href: ef6/modeling/designer/table-splitting.md
         - name: Inheritance Mappings
           items:
-          - name: Table per Hierarchy 
+          - name: Table per Hierarchy
             href: ef6/modeling/designer/inheritance/tph.md
           - name: Table per Type
             href: ef6/modeling/designer/inheritance/tpt.md
@@ -449,7 +426,7 @@
           items:
           - name: Overview
             href: ef6/modeling/designer/codegen/index.md
-          - name: Legacy ObjectContext 
+          - name: Legacy ObjectContext
             href: ef6/modeling/designer/codegen/legacy-objectcontext.md
         - name: Advanced
           items:
@@ -569,5 +546,5 @@
             href: ef6/resources/licenses/ef6/kor.md
           - name: Russian
             href: ef6/resources/licenses/ef6/rus.md
-    - name: "⤤ EF6 API Reference"
+    - name: EF6 API Reference >>
       href: https://docs.microsoft.com/dotnet/api/?view=entity-framework-6.2.0
